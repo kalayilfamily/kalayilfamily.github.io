@@ -13,7 +13,7 @@
     <!-- Page Title -->
     <title>Kalayil Family</title>
     <!-- Meta Description -->
-    <meta name="description" content="Novian Hub MAC">
+    <meta name="description" content="Kalayil Family">
     <meta name="keywords"
         content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
     <meta name="author" content="Toney Abraham">
@@ -45,6 +45,8 @@
 
     <!-- Modernizer Script for old Browsers -->
     <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <style>
         .m1 {
             position: relative;
@@ -54,7 +56,7 @@
         }
 
         /* Then style the iframe to fit in the container div with full height and width */
-        .map {
+        /* .map {
             position: absolute;
             top: 0;
             left: 0;
@@ -62,6 +64,36 @@
             right: 0;
             width: 100%;
             height: 100%;
+        } */
+
+        /* Make sure body/html have full height */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            /* optional */
+            display: flex;
+            justify-content: center;
+            /* horizontal center */
+            align-items: center;
+            /* vertical center */
+            z-index: 9999;
+        }
+
+        #preloader img {
+            width: 100px;
+            /* logo size */
+            height: auto;
         }
     </style>
 
@@ -71,8 +103,10 @@
 
     <!-- preloader -->
     <div id="preloader">
-        <img src="img/logo.jpg" alt="Preloader" style="width: 100px;">
+        <img src="img/logo.jpg" alt="Preloader">
     </div>
+
+
     <!-- end preloader -->
 
     <!-- 
@@ -187,569 +221,285 @@
             <div class="row">
                 <div class="col-md-12 titleimg">Images</div>
             </div>
+            <!-- Group Image -->
             <div class="row">
                 <div class="col-md-12">
-                    <img src="img/grpimg.jpeg" alt="" class="dimage">
-                    <!-- <p class="image-title">Ancestors</p> -->
-                </div>
-            </div>
-            <div class="row custom-row">
-                <div class="col-3">
-                    <img class="singleimage" src="img/i1.jpeg" alt="">
-                </div>
-                <div class="col-3">
-                    <img class="singleimage" src="img/i2.jpeg" alt="">
-                </div>
-                <div class="col-3">
-                    <img class="singleimage" src="img/i3.jpeg" alt="">
-                </div>
-                <div class="col-3">
-                    <img class="singleimage" src="img/i4.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img src="img/grpimg.jpeg" alt="Group Image" class="singleimage"
+                            onclick="openDeathModal('img/grpimg.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/grpimg.jpeg')"><i
+                                class="fa fa-search-plus"></i></div>
+                    </div>
                 </div>
             </div>
             <div style="height: 20px;"></div>
             <div class="row custom-row">
                 <div class="col-3">
-                    <img class="singleimage" src="img/i5.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/i1.jpeg" alt="" onclick="openDeathModal('img/i1.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/i1.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/i6.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/i2.jpeg" alt="" onclick="openDeathModal('img/i2.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/i2.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/i7.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/i3.jpeg" alt="" onclick="openDeathModal('img/i3.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/i3.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/i8.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/i4.jpeg" alt="" onclick="openDeathModal('img/i4.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/i4.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <div style="height: 20px;"></div>
+            <div class="row custom-row">
+                <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/i5.jpeg" alt="" onclick="openDeathModal('img/i5.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/i5.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/i6.jpeg" alt="" onclick="openDeathModal('img/i6.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/i6.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/i7.jpeg" alt="" onclick="openDeathModal('img/i7.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/i7.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/i8.jpeg" alt="" onclick="openDeathModal('img/i8.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/i8.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div style="height: 20px;"></div>
 
             <div class="row custom-row">
                 <div class="col-3">
-                    <img class="singleimage" src="img/1.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/1.jpeg" alt="" onclick="openDeathModal('img/1.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/1.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/2.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/2.jpeg" alt="" onclick="openDeathModal('img/2.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/2.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/3.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/3.jpeg" alt="" onclick="openDeathModal('img/3.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/3.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/4.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/4.jpeg" alt="" onclick="openDeathModal('img/4.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/4.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div style="height: 20px;"></div>
-            <div class="row custom-row">
-                <div class="col-3">
-                    <img class="singleimage" src="img/5.jpeg" alt="">
-                </div>
-                <div class="col-3">
-                    <img class="singleimage" src="img/6.jpeg" alt="">
-                </div>
-                <div class="col-3">
-                    <img class="singleimage" src="img/7.jpeg" alt="">
-                </div>
-                <div class="col-3">
-                    <img class="singleimage" src="img/8.jpeg" alt="">
-                </div>
-            </div>
+
+
             <div style="height: 20px;"></div>
 
             <div class="row custom-row">
                 <div class="col-3">
-                    <img class="singleimage" src="img/9.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/5.jpeg" alt="" onclick="openDeathModal('img/5.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/5.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/10.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/6.jpeg" alt="" onclick="openDeathModal('img/6.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/6.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/11.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/7.jpeg" alt="" onclick="openDeathModal('img/7.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/7.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/12.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/8.jpeg" alt="" onclick="openDeathModal('img/8.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/8.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
             <div style="height: 20px;"></div>
 
             <div class="row custom-row">
                 <div class="col-3">
-                    <img class="singleimage" src="img/13.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/9.jpeg" alt="" onclick="openDeathModal('img/9.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/9.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/14.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/10.jpeg" alt="" onclick="openDeathModal('img/10.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/10.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/15.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/11.jpeg" alt="" onclick="openDeathModal('img/11.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/11.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/16.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/12.jpeg" alt="" onclick="openDeathModal('img/12.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/12.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
             <div style="height: 20px;"></div>
+
             <div class="row custom-row">
                 <div class="col-3">
-                    <img class="singleimage" src="img/17.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/13.jpeg" alt="" onclick="openDeathModal('img/13.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/13.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
-                    <img class="singleimage" src="img/18.jpeg" alt="">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/14.jpeg" alt="" onclick="openDeathModal('img/14.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/14.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/15.jpeg" alt="" onclick="openDeathModal('img/15.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/15.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/16.jpeg" alt="" onclick="openDeathModal('img/16.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/16.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="height: 20px;"></div>
+
+            <div class="row custom-row">
+                <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/17.jpeg" alt="" onclick="openDeathModal('img/17.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/17.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/18.jpeg" alt="" onclick="openDeathModal('img/18.jpeg')">
+                        <div class="magnifier" onclick="openDeathModal('img/18.jpeg')">
+                            <i class="fa fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="gallery-image-wrapper">
+                        <img class="singleimage" src="img/00.jpg" alt="">
+                        <!-- <div class="magnifier" onclick="openDeathModal('img/00.jpg')">
+                            <i class="fa fa-search-plus"></i> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-3">
+                <div class="gallery-image-wrapper">
                     <img class="singleimage" src="img/00.jpg" alt="">
+                    <div class="magnifier" onclick="openDeathModal('img/00.jpg')">
+                    <i class="fa fa-search-plus"></i>
                 </div>
-                <div class="col-3">
-                    <img class="singleimage" src="img/00.jpg" alt="">
-                </div>
-            </div>
-            <div style="height: 20px;"></div>
+            </div> -->
+        </div>
+
+        <!-- <div style="height: 20px;"></div> -->
+        </div>
+
+        <!-- Modal -->
+        <div id="deathModal" class="image-popup">
+            <img id="deathModalImg" src="" alt="">
         </div>
     </section>
-    <!--
-        End Home SliderEnd
-        ==================================== -->
-
-    <!--
-        Features
-        ==================================== -->
-    <!-- 
-    <section id="features" class="features">
-        <div class="container">
-            <div class="row">
-
-                <div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
-                    <h2>Features</h2>
-                    <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
-                </div>
-
-               
-                <div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-github fa-2x"></i>
-                        </div>
-
-                        <div class="service-desc">
-                            <h3>Startup</h3>
-                            <p>Your reputation is more important than your paycheck, and your integrity is worth more
-                                than your career.</p>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-pencil fa-2x"></i>
-                        </div>
-
-                        <div class="service-desc">
-                            <h3>Skill Development</h3>
-                            <p>Easy is not a option..No days off..Never Quit..Be Fearless..Talent you have
-                                Naturally..Skill is only developed by hours and hours of Work</p>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="col-md-4 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="900ms">
-                    <div class="service-item">
-                        <div class="service-icon">
-                            <i class="fa fa-bullhorn fa-2x"></i>
-                        </div>
-
-                        <div class="service-desc">
-                            <h3>Entrepreneurship</h3>
-                            <p>It’s fine to celebrate success but it is more important to heed the lessons of failure.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </section> -->
-
-    <!--
-        End Features
-        ==================================== -->
-
-
-    <!--
-        Our Works
-        ==================================== -->
-    <!-- 
-    <section id="works" class="works clearfix">
-        <div class="container">
-            <div class="row">
-
-                <div class="sec-title text-center">
-                    <h2>Works</h2>
-                    <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
-                </div>
-
-                <div class="sec-sub-title text-center">
-                    <p>Developing a good work ethic is key. Apply yourself at whatever you do, whether you're a janitor
-                        or taking your first summer job because that work ethic will be reflected in everything you do
-                        in life.”</p>
-                </div>
-
-                <div class="work-filter wow fadeInRight animated" data-wow-duration="500ms">
-                    <ul class="text-center">
-                        <li><a href="javascript:;" data-filter="all" class="active filter">All</a></li>
-                        <li><a href="javascript:;" data-filter=".hackathon" class="filter">Hackathon</a></li>
-                        <li><a href="javascript:;" data-filter=".idea" class="filter">Idea Day</a></li>
-                        <li><a href="javascript:;" data-filter=".makersmeet" class="filter">Makers Meet</a></li>
-                        <li><a href="javascript:;" data-filter=".work" class="filter">Workshops</a></li>
-                        <li><a href="javascript:;" data-filter=".seminar" class="filter">Seminars</a></li>
-                        <li><a href="javascript:;" data-filter=".presentation" class="filter">Presentation</a></li>
-                        <li><a href="javascript:;" data-filter=".programs" class="filter">Programs</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="project-wrapper">
-
-            <figure class="mix work-item hackathon">
-                <img src="img/works/item-1.jpg" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-1.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item idea">
-                <img src="img/works/item-2.jpg" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-2.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item makersmeet">
-                <img src="img/works/item-3.jpg" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-3.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item work">
-                <img src="img/works/item-4.jpg" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-4.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item seminar">
-                <img src="img/works/item-5.jpg" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-5.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item presentation">
-                <img src="img/works/item-6.jpg" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-6.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>Click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item programs">
-                <img src="img/works/item-7.jpg" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-7.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item programs">
-                <img src="img/works/item-8.png" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-8.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item programs">
-                <img src="img/works/item-9.jpg" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-9.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-
-            <figure class="mix work-item programs">
-                <img src="img/works/item-10.png" alt="">
-                <figcaption class="overlay">
-                    <a class="fancybox" rel="works" title="" href="img/works/item-10.jpg"><i
-                            class="fa fa-eye fa-lg"></i></a>
-                    <h4>click to magnify</h4>
-                    <p>Photography</p>
-                </figcaption>
-            </figure>
-        </div>
-
-
-    </section> -->
-
-    <!--
-        End Our Works
-        ==================================== -->
-
-    <!--
-        Meet Our Team
-        ==================================== -->
-
-    <!-- <section id="team" class="team">
-        <div class="container">
-            <div class="row">
-
-                <div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
-                    <h2>Meet Our Team</h2>
-                    <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
-                </div>
-
-                <div class="sec-sub-title text-center wow fadeInRight animated" data-wow-duration="500ms">
-                    <p></p>
-                </div>
-
-        
-                <figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated"
-                    data-wow-duration="500ms">
-                    <div class="member-thumb">
-                        <img src="img/team/christo.png" alt="Team Member" class="img-responsive">
-                        <figcaption class="overlay">
-                            <h5>Christo Joseph </h5>
-                            <p>Msc Electronics</p>
-                            <ul class="social-links text-center">
-                                <li><a href="https://www.instagram.com/varkeychan__/?hl=en"><i
-                                            class="fa fa-instagram fa-lg"></i></a></li>
-
-                                <li><a href="https://www.linkedin.com/in/christo-joseph-0b3905198/"><i
-                                            class="fa fa-linkedin fa-lg"></i></a></li>
-                            </ul>
-                        </figcaption>
-                    </div>
-                    <h4>Christo joseph</h4>
-                    <span>President</span>
-                </figure>
-           
-                <figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated"
-                    data-wow-duration="500ms" data-wow-delay="300ms">
-                    <div class="member-thumb">
-                        <img src="img/team/kp.png" alt="Team Member" class="img-responsive">
-                        <figcaption class="overlay">
-                            <h5>Krishnapriya K </h5>
-                            <p>Msc Electronics</p>
-                            <ul class="social-links text-center">
-                                <li><a href="https://www.instagram.com/krishna_priya_nair_/?hl=en"><i
-                                            class="fa fa-instagram fa-lg"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/krishnapriya-k-b9845921a"><i
-                                            class="fa fa-linkedin fa-lg"></i></a></li>
-                            </ul>
-                        </figcaption>
-                    </div>
-                    <h4>Krishnapriya K</h4>
-                    <span>secretary</span>
-                </figure>
-              
-                <figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated"
-                    data-wow-duration="500ms" data-wow-delay="600ms">
-                    <div class="member-thumb">
-                        <img src="img/team/jeny.png" alt="Team Member" class="img-responsive">
-                        <figcaption class="overlay">
-                            <h5>Jeny Rose Job</h5>
-                            <p>Msc Electronics</p>
-                            <ul class="social-links text-center">
-                                <li><a href="https://www.instagram.com/rubysunn_24/"><i
-                                            class="fa fa-instagram fa-lg"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/jeny-rose-54509120b"><i
-                                            class="fa fa-linkedin fa-lg"></i></a></li>
-                            </ul>
-                        </figcaption>
-                    </div>
-                    <h4>Jeny Rose Job</h4>
-                    <span>Student Coordinator</span>
-                </figure>
-               
-                <figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated"
-                    data-wow-duration="500ms" data-wow-delay="900ms">
-                    <div class="member-thumb">
-                        <img src="img/team/alina.png" alt="Team Member" class="img-responsive">
-                        <figcaption class="overlay">
-                            <h5>Alina Alia John</h5>
-                            <p>Msc Electronics</p>
-                            <ul class="social-links text-center">
-                                <li><a href="https://www.instagram.com/alinaelia_29/?hl=en"><i
-                                            class="fa fa-instagram fa-lg"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/alina-elia-john-2a095a1b7"><i
-                                            class="fa fa-linkedin fa-lg"></i></a></li>
-                            </ul>
-                        </figcaption>
-                    </div>
-                    <h4>Alina Alia John</h4>
-                    <span>Media Head</span>
-                </figure>
-               
-                <figure class="team-member col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated"
-                    data-wow-duration="500ms" data-wow-delay="600ms">
-                    <div class="member-thumb">
-                        <img src="img/team/toney.png" alt="Team Member" class="img-responsive">
-                        <figcaption class="overlay">
-                            <h5>Toney Abraham</h5>
-                            <p>Msc Electronics</p>
-                            <ul class="social-links text-center">
-                                <li><a href="https://www.instagram.com/clutch__kid__/?hl=en"><i
-                                            class="fa fa-instagram fa-lg"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/toney-abraham-8b0470190/"><i
-                                            class="fa fa-linkedin fa-lg"></i></a></li>
-                            </ul>
-                        </figcaption>
-                    </div>
-                    <h4>Toney Abraham</h4>
-                    <span>Technical Head</span>
-                </figure>
-
-            </div>
-        </div>
-    </section> -->
-
-    <!--
-        End Meet Our Team
-        ==================================== -->
-
-    <!--
-        Some fun facts
-        ==================================== -->
-    <!-- 
-    <section id="facts" class="facts">
-        <div class="parallax-overlay">
-            <div class="container">
-                <div class="row number-counters">
-
-                    <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
-                        <h2>Some Fun Facts</h2>
-                        <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated"
-                        data-wow-duration="500ms">
-                        <div class="counters-item">
-                            <i class="fa fa-clock-o fa-3x"></i>
-                            <strong data-to="15">0</strong>
-               
-                            <p>Conducted programmes</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms"
-                        data-wow-delay="300ms">
-                        <div class="counters-item">
-                            <i class="fa fa-users fa-3x"></i>
-                            <strong data-to="59">0</strong>
-                            <p>Members</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms"
-                        data-wow-delay="600ms">
-                        <div class="counters-item">
-                            <i class="fa fa-rocket fa-3x"></i>
-                            <strong data-to="4">0</strong>
-                            <p> Completed Projects</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms"
-                        data-wow-delay="900ms">
-                        <div class="counters-item">
-                            <i class="fa fa-trophy fa-3x"></i>
-                            <strong data-to="10">0</strong>
-                            <p>R & D</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!--
-        End Some fun facts
-        ==================================== -->
-
-
-    <!--
-        Contact Us
-        ==================================== -->
-    <!-- <section id="contact" class="contact">
-        <div class="container">
-            <div class="row mb50">
-
-                <div class="sec-title text-center mb50 wow fadeInDown animated" data-wow-duration="500ms">
-                    <h2>Let’s Discuss</h2>
-                    <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
-                </div>
-
-                <div class="sec-sub-title text-center wow rubberBand animated" data-wow-duration="1000ms">
-                    <p>Say Hello, Feel free to ask your queries.</p>
-                </div>
-
-
-                <div class="container text-center" data-wow-duration="500ms">
-                    <div class="contact-address">
-                        <h3>Mar Augusthinose College,Ramapuram </h3>
-                        <p>Kottayam</p>
-                        <p>Kerala, India</p>
-                        <p>686576</p>
-                    </div>
-                </div>
-
-                
-                <div class="container text-center" data-wow-duration="500ms" data-wow-delay="600ms">
-                    <ul class="footer-social">
-                        <li><a href="https://www.instagram.com/novian_hub/?hl=en"><i
-                                    class="fa fa-instagram fa-3x"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/novian-hub-254533221"><i
-                                    class="fa fa-linkedin fa-3x"></i></a></li>
-                        <li><a href="mailto:novianhub@mac.edu.in"><i class="fa fa-envelope-square fa-3x"></i></a></li>
-                    </ul>
-                </div>
-                
-
-            </div>
-        </div>
-
-       
-        <div class="m1">
-            <iframe class="map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.604840479686!2d76.66179041479255!3d9.79946389298884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cf17bf754fcf%3A0xe60d8ff98a7a2597!2sNovian%20Hub!5e0!3m2!1sen!2sin!4v1633975804489!5m2!1sen!2sin"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section> -->
-
-    <!--
-        End Contact Us
-        ==================================== -->
-
 
     <footer id="footer" class="footernew">
         <div class="container">
@@ -794,6 +544,42 @@
     <script src="js/jquery.easing.min.js"></script>
     <!-- jquery easing -->
     <script src="js/wow.min.js"></script>
+    <!-- pop up button -->
+    <script>
+        const deathModal = document.getElementById("deathModal");
+        const deathModalImg = document.getElementById("deathModalImg");
+
+        window.openDeathModal = function (url) {
+            deathModalImg.src = url;
+            deathModal.style.display = "flex";
+        }
+
+        deathModal.onclick = function (e) {
+            if (e.target === deathModal || e.target === deathModalImg) {
+                deathModal.style.display = "none";
+            }
+        }
+    </script>
+    <!-- <script>
+        $(document).ready(function () {
+            $("body").append('<div class="image-popup"><img src="" alt="popup"></div>');
+
+            $(".singleimage").on("click", function () {
+                let src = $(this).attr("src");
+                $(".image-popup img").attr("src", src);
+                $(".image-popup").addClass("show").fadeIn("fast");
+            });
+
+            $(".image-popup").on("click", function (e) {
+                if (e.target === this || $(e.target).is("::after")) {
+                    $(".image-popup").removeClass("show").fadeOut("fast");
+                }
+            });
+        });
+
+
+    </script> -->
+
     <script>
         var wow = new WOW({
             boxClass: 'wow',      // animated element css class (default is wow)
